@@ -1,16 +1,14 @@
-import { ThemedText } from "@/components/themed-text";
-import { ThemedView } from "@/components/themed-view";
 import { AuthContext } from "@/utils/authContext";
-import { useContext } from "react";
-import { Button } from "react-native";
+import React, { useContext } from "react";
+import { Button, Text, View } from "react-native";
 
 export default function LoginScreen() {
     const authContext = useContext(AuthContext);
 
     return (
-        <ThemedView style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            <ThemedText type="title">Login Screen</ThemedText>
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+            <Text style={{ fontSize: 24, fontWeight: 'bold' }}>Login Screen</Text>
             <Button title="Log In" onPress={authContext.logIn} />
-        </ThemedView>
+        </View>
     );
 }
